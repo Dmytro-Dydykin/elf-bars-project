@@ -1,0 +1,132 @@
+.store{
+    width: 82vw;
+    min-height: 35rem;
+    background-color: white;
+    margin: 2rem auto;
+    border-radius: 5px;
+    padding: 0.6rem 0 0 0 ;
+    overflow: visible !important;
+}
+.input{
+    width: 3.4rem;
+}
+button {
+    font: inherit;
+    cursor: pointer;
+    background-color: #b5f6f8;
+    border: 1px solid #3dc9fc;
+    color: black;
+    padding: 0.20rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.visible{
+    overflow: visible !important;
+
+}
+.about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.about h2{
+    font-style: italic;
+}
+.delete{
+    padding: 0;
+    margin: 0;
+    border: inherit;
+    background-color: inherit;
+}
+
+.main{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+/* menu */
+
+.nav {
+    height: 50px;
+    margin-right: 20px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+
+.burger_btn {
+    margin-left: 3.2rem;
+    width: 5px;
+    height: 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+.burger_btn:before {
+    content: '';
+    background-color: black;
+    position: absolute;
+    top: 0;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+}
+
+.burger_btn span {
+    background-color: black;
+    position: absolute;
+    top: 6px;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+}
+
+
+.burger_btn:after {
+    content: '';
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+
+}
+
+.modal{
+    padding: 0;
+    margin-left: 1rem;
+    display: none;
+    z-index: 100;
+    position: absolute;
+    background-color: #07e7fc;
+
+}
+.modal.active{
+    display: block;
+
+}
+
+
+
+.btn:hover{
+    background-color: #3dc9fc;
+}
+
+.ProductsLoading {
+    text-align: center;
+}
+.ProductsError {
+    text-align: center;
+    color: red;
+}
+

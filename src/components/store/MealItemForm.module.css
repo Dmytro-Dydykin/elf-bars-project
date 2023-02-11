@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form input{
+ width: 2.3rem;
+    margin: 10px 0 0 3rem;
+}
+
+.btn {
+    font: inherit;
+    cursor: pointer;
+    background-color: #b5f6f8;
+    border: 1px solid #3dc9fc;
+    color: black;
+    padding: 0 0.3rem;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.form button:hover,
+.form button:active {
+    background-color: #3888f1;
+    border-color: #3703d2;
+}

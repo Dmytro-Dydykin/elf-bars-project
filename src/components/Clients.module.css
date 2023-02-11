@@ -1,0 +1,89 @@
+.wrapper{
+    width: 83vw;
+    min-height: 35rem;
+    border-radius: 5px;
+    padding: 0.6rem 1rem 2rem  ;
+    overflow: visible !important;
+    margin: 2rem auto 5rem;
+    background: rgba(144,210,252,0.32);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+}
+.wrapper .data h1{
+    color: black;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 400;
+    padding: 1.15rem 0;
+}
+.data{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    align-items: center;
+}
+.data button{
+    background: rgba(144,210,252,0.32);
+
+    height: 2rem;
+    width: 8rem;
+    cursor: pointer;
+}
+.data button:hover{
+    background: rgba(67, 180, 253, 0.32);
+
+}
+.clients {
+    width: 83vw;
+    margin: 2rem auto;
+    animation: meals-appear 1s ease-out forwards;
+}
+.client_no{
+    z-index: 3;
+    backdrop-filter: blur(0px);
+    position: absolute;
+    transform: translateX(-100%);
+    top: 55%;
+    left: -50%;
+    height: 10vh;
+    width: 10vw;
+    transition: all 0.2s linear;
+}
+
+.client_blur{
+    transform: translateX(0);
+    backdrop-filter: blur(2px);
+    position: absolute;
+    z-index: 100;
+    height: 120vh;
+    width: 120vw;
+    top: 25%;
+    left: 0;
+    transition: transform 0.3s linear;
+}
+
+.ClientsLoading {
+    text-align: center;
+}
+.ClientsError {
+    text-align: center;
+    color: red;
+}
+
+.clients ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes meals-appear {
+    from {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

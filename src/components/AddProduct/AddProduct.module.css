@@ -1,0 +1,21 @@
+.product__modal{
+    width: 75vw;
+    min-height: 28rem;
+    background-color: #aee2f6;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    cursor: pointer;
+    margin-left: 77%;
+    padding: 0.5rem 1.5rem;
+    width: 10%;
+    border-radius: 20px;
+    background-color: #37a6ea;
+}
+.btn:hover{
+    background-color: #48c4fa;
+
+}

@@ -1,0 +1,24 @@
+.client {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    z-index: 1;
+}
+.client h3{
+    margin-left: 4rem;
+}
+.phone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.phone__number {
+
+    font-size: 1.15rem;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    font-style: italic;
+}
+
