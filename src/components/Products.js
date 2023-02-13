@@ -1,10 +1,9 @@
 import {Fragment} from "react";
 import DataTable from 'react-data-table-component'
 import React, {useState, useEffect} from "react";
-import classes from "./Store.module.css";
-import MealItemForm from "./store/MeaiItemForm";
+import classes from "./Products.module.css";
+import ProductItemForm from "./products/ProductItemForm";
 import AddProduct from "./AddProduct/AddProduct";
-import MealItem from "./store/MealItem";
 
 
 const customStyles = {
@@ -12,6 +11,10 @@ const customStyles = {
     headRow: {
 
         style: {
+            zIndex: 1,
+
+            background: "rgba(144,210,252,0.32)",
+            position: 'relative',
             minHeight: '52px',
             borderBottomWidth: '1.5px',
             borderBottomColor: 'black',
@@ -25,15 +28,16 @@ const customStyles = {
     },
     headCells: {
         style: {
+            position: 'relative',
+            zIndex: 1,
+
             fontSize: '18px',
             paddingLeft: '16px',
             paddingRight: '16px',
-            borderRightWidth: '1px',
+            borderRightWidth: '0.8px',
             borderRightColor: 'black',
             borderRightStyle: 'solid',
-            borderTopWidth: '1px',
-            borderTopColor: 'black',
-            borderTopStyle: 'solid',
+
             borderLeftWidth: '1px',
             borderLeftColor: 'black',
             borderLeftStyle: 'solid',
@@ -48,10 +52,13 @@ const customStyles = {
     },
     cells: {
         style: {
+            position: 'relative',
+            zIndex: 1,
 
+            background: "rgba(144,210,252,0.32)",
             paddingLeft: '15px', // override the cell padding for data cells
             paddingRight: '8px',
-            borderRightWidth: '1px',
+            borderRightWidth: '0.8px',
             borderRightColor: 'black',
             borderRightStyle: 'solid',
             borderLeftWidth: '1px',
@@ -66,6 +73,8 @@ const customStyles = {
     rows: {
 
         style: {
+            position: 'relative',
+            zIndex: 1,
             fontSize: '15px',
             fontWeight: 400,
             minHeight: '38px',
@@ -81,7 +90,8 @@ const customStyles = {
     }
 };
 
-const Store = (props) => {
+
+const Products = (props) => {
 
 
     const [productAddingShown, setProductAddingShown] = useState(false)
@@ -89,6 +99,7 @@ const Store = (props) => {
     const [loading, setLoading] = useState(false);
     const [httpError, setHttpError] = useState();
     const [modalActive, setModalActive] = useState(false)
+
 
 
     async function fetchTableData() {
@@ -128,7 +139,6 @@ const Store = (props) => {
     }
     const hideProductHandler = async () => {
         setProductAddingShown(false)
-        await fetchTableData()
     }
 
     const deleteItemHandler = async (productId) => {
@@ -149,10 +159,11 @@ const Store = (props) => {
     const modalActiveClasses = modalActive ? `${classes.modal} + ${classes.active}` : `${classes.modal}`;
 
 
+
     const columns = [
         {
             name: 'Flavour',
-            selector: (row) => <MealItem flavour={row.flavour}>{row.flavour}</MealItem>
+            selector: (row) => row.flavour
         },
         {
             name: 'Puffs',
@@ -167,11 +178,11 @@ const Store = (props) => {
             selector: (row) => row.fulfilmentPrice
         },
         {
-            name: '',
+            name: 'Quantity/SellingPrice',
             selector: (row) =>
                 <Fragment>
                     <div className={classes.main}>
-                        <MealItemForm/>
+                        <ProductItemForm productId={row.id}/>
                         <div className={classes.menu}>
                             <div className={classes.nav}>
                                 <div className={classes.burger_btn} onClick={() => setModalActive(!modalActive)}>
@@ -190,24 +201,20 @@ const Store = (props) => {
     ]
 
 
+
+
     return (
-        <Fragment>
-            <div className={classes.store}>
-                <div className={classes.about}>
-                    <h2>Products</h2>
-                    <button className={classes.btn} onClick={showProductHandler}>Add Product</button>
-                </div>
-                {productAddingShown && <AddProduct onCancel={hideProductHandler}/>}
-                {!productAddingShown &&
-                    <DataTable
-                        columns={columns}
-                        data={clients}
-                        progressPending={loading}
-                        customStyles={customStyles}
-                    />}
+        <div className={classes.wrapper}>
+            <div className={classes.data}>
+                <h1>Products Data</h1>
+                <button onClick={showProductHandler}>Add Product</button>
             </div>
-        </Fragment>
+            <div className={productAddingShown ? classes.product__blur : classes.product__original}>
+                <AddProduct onCancel={hideProductHandler} fetch={fetchTableData}/>
+            </div>
+            <DataTable columns={columns} data={clients} progressPending={loading} customStyles={customStyles}/>
+        </div>
     )
 }
 
-export default Store
+export default Products

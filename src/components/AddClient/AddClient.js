@@ -1,9 +1,32 @@
-import React from 'react';
-import classes from "./AddClient.module.css"
-import CheckoutClient from "./CheckoutClient";
+import React,{useRef} from 'react';
 import Form from "../UI/Form/Form";
 
+
+
 const AddClient = (props) => {
+
+
+    const nameInputRef = useRef();
+    const phoneInputRef = useRef();
+
+    const name = 'client'
+    const clientsData = [{ name: 'Name', type: 'text', nameInputRef: nameInputRef},
+        { name: 'Phone', type: 'text', nameInputRef: phoneInputRef}
+    ]
+
+    const confirmHandler = (event) => {
+        event.preventDefault();
+
+        const enteredName = nameInputRef.current?.value;
+        const enteredPhone = phoneInputRef.current?.value;
+
+
+        submitOrderHandler({
+            name: enteredName,
+            phone: enteredPhone,
+        })
+
+    };
 
 
     const submitOrderHandler = async (userData) => {
@@ -15,14 +38,13 @@ const AddClient = (props) => {
                 name: userData.name,
                 phone: userData.phone
             })
-        })
+        }).then(props.fetch)
     }
 
 
     return (
         <div>
-            {/*<CheckoutClient onConfirm={submitOrderHandler}/>*/}
-            <Form onConfirm={submitOrderHandler} onCancel={props.onCancel}/>
+            <Form confirmHandler={confirmHandler} onCancel={props.onCancel} allData={clientsData} name={name}/>
         </div>
     );
 };

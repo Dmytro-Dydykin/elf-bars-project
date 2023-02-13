@@ -13,6 +13,7 @@ h2, h3 {
 
 h2 {
 	color: #747474;
+    text-transform: uppercase;
 	text-align: center;
 }
 
@@ -31,7 +32,7 @@ Login Box
     height: 300px;
   position: absolute;
     z-index: 100;
-  top: 28%;
+  top: 24%;
   left: 40.5%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -54,14 +55,14 @@ Login Box
   -webkit-border-radius: 6px 6px 0 0;
      -moz-border-radius: 6px 6px 0 0;
           border-radius: 6px 6px 0 0;
-  
+
 	-webkit-transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
 	        transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
 	-webkit-transform-origin: 0 0;
 	        transform-origin: 0 0;
 	-webkit-backface-visibility: hidden;
 	        backface-visibility: hidden;
-	
+
 	-webkit-box-shadow: 15px -15px 30px rgba(0,0,0,0.32);
      -moz-box-shadow: 15px -15px 30px rgba(0,0,0,0.32);
           box-shadow: 15px -15px 30px rgba(0,0,0,0.32);
@@ -147,8 +148,7 @@ label.checkbox {
 	line-height: 1.7;
 }
 
-input[type=text],
-input[type=password] {
+.input {
     width: 100%;
     height: 32px;
     padding: 0px 10px;
@@ -165,82 +165,13 @@ input[type=password] {
     box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
 }
 
-input[type=text]:focus,
-input[type=password]:focus {
-    background-color: #f8f8c6;
+.input:focus {
+    background-color: #94effc;
     outline: none;
 }
 
-input[type=submit]  {
-  width: 100%;
-  height: 48px;
-  margin-top: 24px;
-  padding: 0px 20px;
-  font-family: 'Quicksand', sans-serif;
-	font-weight: 700;
-	font-size: 18px;
-	color: #fff;
-  line-height: 40px;
-  text-align: center;
-    background-color: #37a6ea;
-    border: 1px #37a6ea solid;
-	opacity: 1;
-	cursor: pointer;
-}
 
-input[type=submit]:hover {
-    background-color: #1f98e1;
-    border: 1px #1f98e1 solid;
-}
 
-input[type=submit]:focus {
-	outline: none;
-}
-.control {
-    margin-bottom: 0.5rem;
-}
-.invalid label {
-    color: #ca3e51;
-}
-
-.invalid input {
-    border-color: #aa0b20;
-    background-color: #ffeff1;
-}
-
-/*--------------------
-Transitions
----------------------*/
-
-.box_form, .box_info, .b, .b_support, .b_cta,
-input[type=submit], p.field span.i {
-    
-	-webkit-transition: all 0.3s;
-     -moz-transition: all 0.3s;
-      -ms-transition: all 0.3s;
-       -o-transition: all 0.3s;
-          transition: all 0.3s;
-}
-
-/*--------------------
-Credits
----------------------*/
-
-.icon-credits {
-  width: 100%;
-  position: absolute;
-  bottom: 4px;
-  font-family:'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
-  font-size: 12px;
-  color: rgba(255,255,255,0.1);
-  text-align: center;
-  z-index: -1;
-}
-
-.icon-credits a {
-  text-decoration: none;
-  color: rgba(255,255,255,0.2);
-}
 
 .submit {
     width: 100%;

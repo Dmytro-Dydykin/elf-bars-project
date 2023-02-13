@@ -151,7 +151,7 @@ const Component = () => {
     }
     const hideClientHandler = async () => {
         setClientAddingShown(false)
-    }
+     }
 
 
     return (
@@ -160,12 +160,10 @@ const Component = () => {
                 <h1>Clients Data</h1>
                 <button onClick={showClientHandler}>Add Client</button>
             </div>
-            <div className={clientAddingShown ? classes.client_blur : classes.client_no}>
-                <AddClient onCancel={hideClientHandler} activeClasses={clientAddingShown}/>
+            <div className={clientAddingShown ? classes.client__blur : classes.client__original}>
+                <AddClient onCancel={hideClientHandler} fetch={fetchTableData}/>
             </div>
-
             <DataTable columns={columns} data={clients} progressPending={loading} customStyles={customStyles}/>
-
         </div>
     )
 };

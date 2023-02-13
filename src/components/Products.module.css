@@ -1,44 +1,38 @@
-.store{
-    width: 82vw;
+
+.wrapper{
+    width: 83vw;
     min-height: 35rem;
-    background-color: white;
-    margin: 2rem auto;
     border-radius: 5px;
-    padding: 0.6rem 0 0 0 ;
+    padding: 0.6rem 1rem 2rem  ;
     overflow: visible !important;
-}
-.input{
-    width: 3.4rem;
-}
-button {
-    font: inherit;
-    cursor: pointer;
-    background-color: #b5f6f8;
-    border: 1px solid #3dc9fc;
-    color: black;
-    padding: 0.20rem 1rem;
-    border-radius: 20px;
-    font-weight: bold;
-}
-.visible{
-    overflow: visible !important;
+    margin: 2rem auto 5rem;
+    background: rgba(144,210,252,0.32);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 
 }
-.about{
+.wrapper .data h1{
+    color: black;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 400;
+    padding: 1.15rem 0;
+}
+.data{
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid black;
     align-items: center;
-    padding: 1rem;
 }
-.about h2{
-    font-style: italic;
+.data button{
+    background: rgba(144,210,252,0.32);
+    cursor: pointer;
 }
-.delete{
-    padding: 0;
-    margin: 0;
-    border: inherit;
-    background-color: inherit;
+.data button:hover{
+    background: rgba(67, 180, 253, 0.32);
+
 }
+
+
 
 .main{
     display: flex;
@@ -64,7 +58,7 @@ button {
 
 
 .burger_btn {
-    margin-left: 3.2rem;
+    margin-left: 3rem;
     width: 5px;
     height: 16px;
     cursor: pointer;
@@ -102,21 +96,49 @@ button {
 
 }
 
-.modal{
-    padding: 0;
-    margin-left: 1rem;
-    display: none;
-    z-index: 100;
-    position: absolute;
-    background-color: #07e7fc;
+.delete{
+    display: flex;
+    width: 1rem;
+    background-color: inherit;
+    border: none;
+
 
 }
+.modal{
+    display: none;
+    position: absolute;
+}
 .modal.active{
+    background-color: inherit;
+    border: none;
+    margin: 0;
     display: block;
 
 }
 
+.product__original{
+    z-index: 3;
+    backdrop-filter: blur(0px);
+    position: absolute;
+    transform: translateX(-100%);
+    top: 55%;
+    left: -50%;
+    height: 10vh;
+    width: 10vw;
+    transition: all 0.2s linear;
+}
 
+.product__blur{
+    transform: translateX(0);
+    backdrop-filter: blur(2px);
+    position: absolute;
+    z-index: 100;
+    height: 120vh;
+    width: 120vw;
+    top: 25%;
+    left: 0;
+    transition: transform 0.3s linear;
+}
 
 .btn:hover{
     background-color: #3dc9fc;

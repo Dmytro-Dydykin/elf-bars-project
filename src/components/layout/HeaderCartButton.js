@@ -1,41 +1,19 @@
-import React, {useContext, useEffect, useState} from "react";
+import React from "react";
 import classes from "./HeaderCartButton.module.css";
-import CartIcon from "../cart/CartIcon";
-import CartContext from "../store/CartContext";
+import {NavLink} from "react-router-dom";
 
 const HeaderCartButton = props => {
-    const [btnIsHighlighted, setBtnIsHighlighted] = useState(false)
-    const cartCtx = useContext(CartContext)
 
-    const {items} = cartCtx
 
-    const numberOfCartItems = items.reduce((curNum, item) => {
-        return curNum + item.amount
-    }, 0);
 
-    const btnClasses = `${classes.button} ${btnIsHighlighted ? classes.bump : ''}`
-
-    useEffect(() => {
-        if (items.length === 0) {
-            return;
-        }
-        setBtnIsHighlighted(true)
-
-        const timer = setTimeout(() => {
-            setBtnIsHighlighted(false)
-        }, 300)
-        return () => {
-            clearTimeout(timer)
-        }
-    }, [items])
 
     return (
-        <button className={btnClasses} onClick={props.onClick}>
-            <span className={classes.icon}><CartIcon /></span>
-            <span>Checkout</span>
-            <span className={classes.badge}>{numberOfCartItems}</span>
-            <span>pcs</span>
+    <NavLink to='/cart' className={classes.cart_link}>
+        <button className={classes.button}>
+            <span className={classes.order}>Order</span>
+            <span className="material-icons">{'shopping_basket'}</span>
         </button>
+    </NavLink>
     )
 }
 

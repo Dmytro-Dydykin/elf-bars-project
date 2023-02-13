@@ -8,7 +8,7 @@ const MainNavigation = (props) => {
     const [menuActive, setMenuActive] = useState(false)
 
 
-    const items = [{value: 'Products', navLink: '/store', icon: 'done_all'},
+    const items = [{value: 'Products', navLink: '/products', icon: 'done_all'},
         {value: 'Clients', navLink: '/clients', icon: 'account_circle'},
         {value: 'Analytic', navLink: '/money', icon: 'attach_money'},
         {value: 'Stock fulfilment', navLink: '/purchase', icon: 'store'},]
@@ -24,7 +24,7 @@ const MainNavigation = (props) => {
                     <Menu active={menuActive} setActive={setMenuActive} items={items}/>
                     <div className={classes.logo}><img src="../Images/Elf-Bar-logo.svg" alt=""/></div>
                 </div>
-                <HeaderCartButton onClick={props.onShowCart}/>
+                <HeaderCartButton/>
         </header>
     );
 };

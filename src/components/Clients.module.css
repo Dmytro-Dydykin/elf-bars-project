@@ -38,7 +38,7 @@
     margin: 2rem auto;
     animation: meals-appear 1s ease-out forwards;
 }
-.client_no{
+.client__original{
     z-index: 3;
     backdrop-filter: blur(0px);
     position: absolute;
@@ -50,7 +50,7 @@
     transition: all 0.2s linear;
 }
 
-.client_blur{
+.client__blur{
     transform: translateX(0);
     backdrop-filter: blur(2px);
     position: absolute;
@@ -75,6 +75,8 @@
     margin: 0;
     padding: 0;
 }
+
+
 
 @keyframes meals-appear {
     from {

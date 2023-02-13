@@ -19,8 +19,20 @@ code {
   monospace;
 }
 
-
-
+.material-icons{
+  color: rgba(2, 2, 2, 0.75);
+  font-size: 1.5rem;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #b5f6f8;
+  border: 1px solid #3dc9fc;
+  color: black;
+  padding: 0.20rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
 .centered {
   margin: 3rem auto;
   text-align: center;

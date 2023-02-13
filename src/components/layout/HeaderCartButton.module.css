@@ -1,3 +1,6 @@
+.cart_link{
+    text-decoration: none;
+}
 .button {
     cursor: pointer;
     font: inherit;
@@ -12,7 +15,9 @@
     font-weight: bold;
 
 }
-
+.order{
+    margin-right: 1rem;
+}
 .button:hover,
 .button:active {
     background-color: rgba(169, 168, 168, 0.09);

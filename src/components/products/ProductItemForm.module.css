@@ -2,10 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
-.form input{
- width: 2.3rem;
-    margin: 10px 0 0 3rem;
+.input{
+    width: 2.3rem;
+    margin-left: 0.6rem ;
 }
 
 .btn {
@@ -17,7 +18,7 @@
     padding: 0 0.3rem;
     border-radius: 20px;
     font-weight: bold;
-    margin-right: 0.5rem;
+    margin-left: 0.3rem;
 }
 
 .form button:hover,
