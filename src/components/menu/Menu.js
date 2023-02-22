@@ -1,18 +1,23 @@
 import React from 'react';
-import "./Menu.css";
+import classes from "./Menu.module.css";
 import {NavLink} from "react-router-dom";
 
 const Menu = ({items, active, setActive}) => {
     return (
-        <div className={active ? 'menu active' : 'menu'} onClick={() => setActive(false)}>
-            <div className='blur'>
-                <div className='menu__content' onClick={e => e.stopPropagation()}>
+        <div className={active ? classes.menu_active : classes.menu} onClick={() => setActive(false)}>
+            <div className={classes.blur}>
+                <div className={classes.menu__content} >
+                    <h1>Menu</h1>
+
                     <ul>
                         {items.map(item =>
                             <li key={item.value}>
-                                <NavLink to={item.navLink}>
-                                    {item.value}
-                                    <span className="material-icons">{item.icon}</span>
+                                <NavLink to={item.navLink} className={({isActive}) =>
+                                    isActive ? classes.active : ''}>
+                                    <div className={classes.link}>
+                                        <span className="material-icons">{item.icon}</span>
+                                        <div className={classes.link__text}>{item.value}</div>
+                                    </div>
                                 </NavLink>
                             </li>
                         )}

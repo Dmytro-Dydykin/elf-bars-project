@@ -1,9 +1,9 @@
 import React from 'react';
-import Clients from "../components/Clients";
+import Clients from "../components/main/Clients";
 
-const ClientsPage = () => {
+const ClientsPage = (props) => {
     return (
-        <Clients />
+        <Clients/>
     );
 };
 

@@ -1,5 +1,5 @@
 import React,{useRef} from 'react';
-import Form from "../UI/Form/Form";
+import Form from "../UI/form/Form";
 
 
 

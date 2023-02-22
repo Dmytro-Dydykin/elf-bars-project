@@ -13,14 +13,45 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.wrapper{
+  width: 83vw;
+  min-height: 35rem;
+  border-radius: 5px;
+  padding: 0.6rem 1rem 2rem  ;
+  overflow: visible !important;
+  margin: 2rem auto 5rem;
+  background: rgba(144,210,252,0.32);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+.data{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  align-items: center;
+}
+.data h1{
+  color: black;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 400;
+  padding: 1.15rem 0;
+}
+.data button{
+  background: rgba(144,210,252,0.32);
+  height: 2rem;
+  width: 9rem;
+  cursor: pointer;
+}
+.data button:hover{
+  background: rgba(67, 180, 253, 0.32);
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
 
 .material-icons{
-  color: rgba(2, 2, 2, 0.75);
+  color: rgb(2, 2, 2);
   font-size: 1.5rem;
 }
 button {
@@ -45,4 +76,55 @@ button {
   font-size: 3rem;
   font-weight: bold;
   color: white;
+}
+.original{
+  z-index: 3;
+  backdrop-filter: blur(0px);
+  position: absolute;
+  transform: translateX(-100%);
+  top: 55%;
+  left: -50%;
+  height: 10vh;
+  width: 10vw;
+  transition: all 0.2s linear;
+}
+
+.blur{
+  transform: translateX(0);
+  backdrop-filter: blur(2px);
+  position: absolute;
+  z-index: 100;
+  height: 120vh;
+  width: 120vw;
+  top: 25%;
+  left: 0;
+  transition: transform 0.3s linear;
+}
+
+@media screen and (max-width: 1635px) {
+  .wrapper{
+    width: 100vw;
+    padding: 0 1rem 2rem  ;
+    margin: 0;
+  }
+  .original{
+    display: none;
+  }
+
+  .blur {
+    display: flex;
+  }
+  .data h1{
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.8rem 0;
+  }
+  .data button{
+    font-size: 13px;
+    width: 6rem;
+  }
+  #delete{
+    margin-top: 5px;
+    font-size: 20px;
+  }
 }

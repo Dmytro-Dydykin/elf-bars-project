@@ -1,0 +1,142 @@
+
+.box {
+    position: absolute;
+    top: 0;
+    left: 20%;
+}
+
+.box_form {
+    width: 500px;
+    position: relative;
+    z-index: 1;
+}
+
+.box_login_tab {
+    width: 50%;
+    height: 40px;
+    background-color: rgb(243, 242, 242);
+    position: relative;
+    float: left;
+    z-index: 1;
+
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+
+    -webkit-transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
+    transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-box-shadow: 15px -15px 30px rgba(0,0,0,0.32);
+    -moz-box-shadow: 15px -15px 30px rgba(0,0,0,0.32);
+    box-shadow: 15px -15px 30px rgba(0,0,0,0.32);
+}
+
+.box_login_title {
+    width: 35%;
+    height: 35px;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    float: left;
+    z-index: 2;
+    align-items: center;
+}
+.box_login_title span {
+    transition: font-size 0.1s linear;
+
+    font-size: 18px;
+    cursor: pointer;
+}
+.box_login_title span:hover {
+    font-size: 22px;
+    color: #07e7fc;
+}
+
+
+.box_login {
+    position: relative;
+    top: -4px;
+    width: 900px;
+    background: white;
+    text-align: center;
+    overflow: hidden;
+    z-index: 2;
+
+
+}
+
+
+/*--------------------
+Form
+---------------------*/
+
+
+.fieldset_body {
+    padding-top: 1.5rem;
+    display: table;
+}
+
+@media screen and (max-width: 1635px) {
+
+    .box {
+        position: absolute;
+        top:0;
+        left:50%;
+        margin-left: -340px;
+        overflow: scroll;
+
+    }
+
+    .box_form {
+        width: 560px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .box_login_tab {
+        width: 50%;
+        height: 40px;
+    }
+
+    .box_login_title {
+        width: 45%;
+    }
+
+
+    .box_login {
+        position: relative;
+        top: -4px;
+        width: 560px;
+        background: white;
+        text-align: center;
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 635px) {
+    .box {
+        position: absolute;
+        top:0;
+        left:50%;
+        margin-left: -205px;
+        overflow: scroll;
+    }
+    .box_form {
+        width: 340px;
+    }
+    .box_login_tab {
+        width: 40%;
+        height: 40px;
+    }
+    .box_login_title {
+        width: 35%;
+    }
+    .box_login {
+        top: -4px;
+        width: 340px;
+    }
+}

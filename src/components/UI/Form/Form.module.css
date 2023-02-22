@@ -29,7 +29,7 @@ Login Box
 
 .box {
   width: 420px;
-    height: 300px;
+    height: 400px;
   position: absolute;
     z-index: 100;
   top: 24%;
@@ -195,5 +195,30 @@ label.checkbox {
 .submit:active {
     background-color: rgba(55, 166, 234, 0.89);
     border: 1px rgba(55, 166, 234, 0.89) solid;
+}
 
+@media screen and (max-width: 768px) {
+    .box {
+        width: 320px;
+    }
+    .box_form {
+        width: 350px;
+    }
+    .box_login {
+        width: 320px;
+    }
+    .box_login_title h2{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .box {
+        width: 280px;
+    }
+    .box_login {
+        width: 280px;
+    }
+    .box_login_title h2{
+        font-size: 12px;
+    }
 }

@@ -1,3 +1,19 @@
+.wrapper {
+    border-radius: 5px;
+    padding: 0.6rem 1rem 1rem;
+    background: rgba(222, 222, 222, 0.23);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+}
+
+
+.borders {
+    margin-top: 2rem;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
 .meals {
     max-width: 60rem;
     background-color: white;
@@ -6,28 +22,128 @@
     animation: meals-appear 1s ease-out forwards;
 }
 
-.MealsLoading {
+.Loading {
     text-align: center;
 }
-.MealsError {
+
+.Error {
     text-align: center;
     color: red;
 }
 
-.meals ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.client_info {
+    margin: 0.5rem auto;
+    text-align: center;
 }
 
-@keyframes meals-appear {
-    from {
-        opacity: 0;
-        transform: translateY(3rem);
+.client_info select {
+    padding: 0.2rem 1rem;
+    text-align: center;
+    background-color: white;
+}
+
+.total_price {
+    background-color: rgba(222, 222, 222, 0.39);
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.total_price h1 {
+    font-size: 1.2rem;
+    margin: 0 auto;
+}
+
+.order_button {
+    display: flex;
+    align-items: center;
+    margin: 0.3rem auto;
+    text-align: center;
+    background-color: #7dff04;
+    padding: 0.3rem 2rem;
+    border-radius: 0;
+}
+
+.clear {
+    text-align: right;
+    margin: 0
+}
+
+.btn {
+    margin: 1rem;
+    display: flex;
+    justify-content: end;
+    text-decoration: none;
+
+}
+
+.btn button {
+    background-color: rgba(4, 104, 253, 0.67);
+}
+
+.justify {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quantity_btn {
+    padding: 0 0.35rem;
+    background-color: inherit;
+    border: none;
+    font-size: 18px;
+    color: #0468fd;
+}
+
+.input {
+    text-align: center;
+    padding: 5px 0;
+    width: 100%;
+    background-color: inherit;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+}
+
+@media screen and (max-width: 1635px) {
+    .wrapper {
+        padding: 20px 0;
+    }
+    .borders {
+        margin: 0 1rem;
+    }
+    .client_info {
+        margin: 0.3rem auto;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .client_info select {
+        padding: 0.1rem 0.5rem;
+    }
+    .total_price h1 {
+        font-size: 0.8rem;
+    }
+    .client_info h2{
+        margin-top: -5px;
+        font-size: 1rem;
+    }
+    .order_button {
+        font-size: 0.8rem;
+        margin: 0.5rem auto 1rem;
+        padding: 0.2rem 1rem;
+    }
+    .clear {
+        font-size: 0.7rem;
+        padding: 10px;
+    }
+    .client_info select {
+        margin-top: -10px;
+        padding: 0.2rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+@media screen and (max-width: 635px) {
+    .borders {
+        margin: 0.3rem 0;
     }
 }

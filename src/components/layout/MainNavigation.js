@@ -4,13 +4,14 @@ import HeaderCartButton from "./HeaderCartButton";
 import {useState} from "react";
 import Menu from "../menu/Menu";
 
-const MainNavigation = (props) => {
+const MainNavigation = () => {
     const [menuActive, setMenuActive] = useState(false)
 
 
-    const items = [{value: 'Products', navLink: '/products', icon: 'done_all'},
-        {value: 'Clients', navLink: '/clients', icon: 'account_circle'},
-        {value: 'Analytic', navLink: '/money', icon: 'attach_money'},
+    const items = [{value: 'Products page', navLink: '/products', icon: 'done_all'},
+        {value: 'Clients page', navLink: '/clients', icon: 'account_circle'},
+        {value: 'Orders page', navLink: '/orders', icon: 'store'},
+        {value: 'Analytic page', navLink: '/money', icon: 'attach_money'},
         {value: 'Stock fulfilment', navLink: '/purchase', icon: 'store'},]
     return (
         <header className={classes.header}>
@@ -22,7 +23,7 @@ const MainNavigation = (props) => {
                         </div>
                     </div>
                     <Menu active={menuActive} setActive={setMenuActive} items={items}/>
-                    <div className={classes.logo}><img src="../Images/Elf-Bar-logo.svg" alt=""/></div>
+                    <div className={classes.logo}><img src="../images/Elf-Bar-logo.svg" alt=""/></div>
                 </div>
                 <HeaderCartButton/>
         </header>

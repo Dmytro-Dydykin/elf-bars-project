@@ -10,12 +10,15 @@ const ProductItemForm = (props) => {
         const quantity = quantityInputRef.current.value;
         const price = priceInputRef.current.value
 
-        console.log(quantityInputRef.current.value)
+        if (quantity > props.totalQuantity){
+            return alert("Quantity that you want order bigger than total quantity you have")
+        } else {
+            addToCartHandler({
+                quantity: quantity,
+                sellingPrice: price
+            })
+        }
 
-        addToCartHandler({
-            quantity: quantity,
-            sellingPrice: price
-        })
     }
     const addToCartHandler = async (userData) => {
         console.log(userData)
@@ -31,8 +34,8 @@ const ProductItemForm = (props) => {
     }
     return (
         <form className={classes.form} onSubmit={submitHandler}>
-            <input type='text' className={classes.input} name='quantity' ref={quantityInputRef}/>
-            <input type='text' className={classes.input} name='price' ref={priceInputRef} />
+            <input type='text' className={classes.input} name='quantity' ref={quantityInputRef} placeholder='pcs'/>
+            <input type='text' className={classes.input} name='price' ref={priceInputRef} placeholder='uah'/>
             <button className={classes.btn}>+ Add</button>
         </form>
     )

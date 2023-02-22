@@ -1,0 +1,21 @@
+
+.clients {
+    width: 83vw;
+    margin: 2rem auto;
+    animation: meals-appear 1s ease-out forwards;
+}
+
+.ClientsLoading {
+    text-align: center;
+}
+.ClientsError {
+    text-align: center;
+    color: red;
+}
+
+.clients ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
